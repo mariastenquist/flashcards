@@ -35,20 +35,20 @@ class Round
 		((@correct_guesses.to_f / guesses.count) * 100).to_i
 	end
 
-  def start
-    puts Messages.new.welcome
-    current = current_card
-    if current != nil
-      puts "This is card number #{@guess_incrementer + 1} out of #{@deck_total}."
-      puts current.question
-      guess = gets.chomp.downcase
-      current_guess = Guess.new(guess, current)
-      record_guess(guess, current)
-      puts current_guess.feedback
-      start
-    else
-    	puts Messages.new.game_over
-    	puts "You got #{correct_guesses} correct guesses out of #{@guess_incrementer} for a score of #{percent_correct}%."
-    end
-  end
+  # def start
+  #   puts Messages.new.welcome
+  #   current = current_card
+  #   if current != nil
+  #     puts "This is card number #{@guess_incrementer + 1} out of #{@deck_total}."
+  #     puts current.question
+  #     guess = gets.chomp.downcase
+  #     current_guess = Guess.new(guess, current)
+  #     record_guess(guess, current)
+  #     puts current_guess.feedback
+  #     start
+  #   else
+  #   	puts Messages.new.game_over
+  #   	puts "You got #{correct_guesses} correct guesses out of #{@guess_incrementer} for a score of #{percent_correct}%."
+  #   end
+  # end
 end
