@@ -28,7 +28,6 @@ class Round
 		if recorded_guess.correct?
 			@correct_guesses += 1 
 		end
-
 	end
 
 	def percent_correct
@@ -36,7 +35,7 @@ class Round
 	end
 
   def start
-    puts Messages.new.welcome
+    puts Messages.welcome
     current = current_card
     if current != nil
       puts "This is card number #{@guess_incrementer + 1} out of #{@deck_total}."
@@ -47,7 +46,7 @@ class Round
       puts current_guess.feedback
       start
     else
-    	puts Messages.new.game_over
+    	puts Messages.game_over
     	puts "You got #{correct_guesses} correct guesses out of #{@guess_incrementer} for a score of #{percent_correct}%."
     end
   end

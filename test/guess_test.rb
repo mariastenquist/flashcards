@@ -9,6 +9,8 @@ class GuessTest < Minitest::Test
 		card = Card.new("Which planet is closest to the sun?", "Mercury")
 		guess = Guess.new("Saturn", card)
 		assert_instance_of Guess, guess
+		assert_equal card, guess.card
+		# assert_equal "Saturn", guess.response
 	end
 
 	def test_can_take_a_guess
@@ -30,14 +32,4 @@ class GuessTest < Minitest::Test
 		assert_equal false, guess.correct?
 	end
 end
-
-	# def test_can_take_a_guess
-	# 	skip
-	# 	card = Card.new("Which planet is closest to the sun?", "Mercury")
-	# 	guess = Guess.new("Saturn", card)
-	# 	assert_equal card, guess.card
-	# 	assert_equal "Saturn", guess.response
-	# 	assert_equal false, guess.correct?
-	# 	assert_equal "Incorrect.", guess.feedback
-	# end
 

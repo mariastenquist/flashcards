@@ -15,8 +15,8 @@ class Guess
 		end
 	end
 
-		def feedback
-			return "Correct!" if correct? == true
-			return "Incorrect!" if correct? == false
-		end
+	def feedback
+		return "Correct!" if correct? == true
+		return "Incorrect!" if correct? == false
+	end
 end
