@@ -1,7 +1,7 @@
 class Messages
 
 	def welcome
-		puts "Welcome! You are playing with 4 cards
+		puts "Welcome to Flashcards!
 ------------------------------------------------------"
 	end
 

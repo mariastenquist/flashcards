@@ -9,18 +9,15 @@ class Round
 							:guesses, 
 							:correct_guesses
 
-	# attr_accessor :current_card
-
 	def initialize(deck)
 		@deck = deck
 		@guesses = []
-		@guess_incrementer = 0
 		@correct_guesses = 0
+		@guess_incrementer = 0
+		@deck_total = deck.count
 	end
 
 	def current_card
-		# card = guesses.count
-		# deck.cards[card]
 		deck.cards.shift
 	end
 
@@ -42,7 +39,7 @@ class Round
     puts Messages.new.welcome
     current = current_card
     if current != nil
-      puts "This is card number #{guesses.count + 1} out of #{deck.count}."
+      puts "This is card number #{@guess_incrementer + 1} out of #{@deck_total}."
       puts current.question
       guess = gets.chomp.downcase
       current_guess = Guess.new(guess, current)
