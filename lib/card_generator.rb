@@ -9,7 +9,7 @@ class CardGenerator
     @card_file = filename
     @card = Array.new
   end
-
+# need to figure out how to break after the , to hide the answer
   def cards
     File.readlines(card_file).map do |line|
       card << line.split(",")
